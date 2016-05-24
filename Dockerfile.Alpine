@@ -1,0 +1,14 @@
+FROM gliderlabs/alpine
+
+RUN apk add --update \
+    python \
+    python-dev \
+    py-pip \
+    build-base \
+  && pip install http-prompt \
+  && pip install httpie \
+  && rm -rf /var/cache/apk/*
+
+#ENTRYPOINT ["/usr/bin/python"]
+
+#CMD ["/usr/bin/http-prompt"]

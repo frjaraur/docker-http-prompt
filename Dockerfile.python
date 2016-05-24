@@ -1,0 +1,6 @@
+FROM python
+
+RUN pip install http-prompt \
+  && pip install httpie
+
+ENTRYPOINT ["python","/usr/local/bin/http-prompt"]

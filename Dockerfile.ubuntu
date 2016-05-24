@@ -1,0 +1,10 @@
+FROM ubuntu:14.04
+
+RUN apt-get update && \
+    apt-get install -qq \
+    python python-dev python-pip binutils  \
+  && pip install http-prompt \
+  && pip install httpie \
+  && rm -rf /var/cache/apt/*
+
+ENTRYPOINT ["/usr/bin/python","/usr/local/bin/http-prompt"]
